@@ -17,34 +17,35 @@ After installing the AWS-CLI application, set up an AWS profile with credentials
 ### Install the requeriments
 
 ```shell
-$ pip install -r requeriments.txt
+pip install -r requeriments.txt
 ```
 
 ### Create the DVC local repository
 
 ```shell
-$ dvc init
+dvc init
 ```
 
 ### Connect to remote storage
 For this demo we will use an AWS S3 bucket as remote storage, but dvc can work with other storage providers, more info [here](https://dvc.org/doc/user-guide/data-management/remote-storage).
 
 ```shell
-$ dvc remote add demo-dvc s3://{name_of_bucket}/{path_of_folder}
+dvc remote add demo-dvc s3://{name_of_bucket}/{path_of_folder}
 ```
 
 ### Linking and versioning the data items
 Firstly, we need to add the directories of data items to DVC and push them to the remote storage.
 
 ```shell
-$ dvc add data config models
-$ dvc push
+dvc add data config models
+dvc push
 ```
 
 Now, we have to save the new version of data items into git remote repository.
 
 ```shell
-$ git add .
-$ git commit -m "Linking the code with the data items"
-$ git push
+git add .
+git commit -m "Linking the code with the data items"
+git push
 ```
+
