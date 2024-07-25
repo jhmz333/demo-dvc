@@ -1,6 +1,7 @@
 numpy
 pandas
 dvc
+dvc-s3
 matplotlib
 seaborn
 scikit-learn
