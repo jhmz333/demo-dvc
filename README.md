@@ -34,7 +34,7 @@ dvc remote add demo-dvc s3://{name_of_bucket}/{path_of_folder}
 ```
 
 ### Linking and versioning the data items
-Firstly, we need to add the directories of data items to DVC and push them to the remote storage.
+Firstly, we need to add the folders of data items to DVC and push them to the remote storage.
 
 ```shell
 dvc add data config models
@@ -49,3 +49,10 @@ git commit -m "Linking the code with the data items"
 git push
 ```
 
+### Recovery a specific version
+When we want to retrieve a previous version, it is enough to know the git revision and execute the commands
+
+```shell
+git checkout {git_revision}
+dvc pull
+```
